@@ -15,7 +15,7 @@
 | **Thành viên 3** (Hoàng Ngọc Đức) | Pipeline Engineer | Task 7, Task 8, Task 9 — RRF, Fallback, Retrieval pipeline |
 | **Thành viên 2** (Lê Việt Hoàng) | Retrieval Engineer | Task 4, Task 5, Task 6 — Chunking, Dense search, BM25 |
 | **Thành viên 3** | Pipeline Engineer | Task 7, Task 8, Task 9 — RRF, Fallback, Retrieval pipeline |
-| **Thành viên 4** | Generation & Evaluation | Task 10, app.py, Golden dataset, RESULT.md |
+| **Thành viên 4** | Trịnh Xuân Huy| Task 10, app.py, Golden dataset, RESULT.md |
 
 ---
 
@@ -39,11 +39,11 @@
 - **Output:** RRF fusion, fallback logic, pipeline end-to-end
 - **Deliverables:** `reports/<id>-<name>.md`
 
-### Thành viên 4
+### Thành viên 4 — Trịnh Xuân Huy
 - **Trách nhiệm chính:** Generation, UI và evaluation
 - **Module:** `src/task10_generation.py`, `app.py`, `group_project/evaluation/`
 - **Output:** Chatbot Streamlit, golden dataset 15 cases, RESULT.md A/B
-- **Deliverables:** `reports/<id>-<name>.md`
+- **Deliverables:** `reports\K4-L3B-2A202602995-TrinhXuanHuy.md`
 
 ---
 
