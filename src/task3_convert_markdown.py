@@ -21,40 +21,61 @@ OUTPUT_DIR = Path(__file__).parent.parent / "data" / "standardized"
 
 
 def convert_legal_docs() -> None:
-    # TODO:Convert PDF/DOCX vào standardized/legal. 
-    #
-    # from markitdown import MarkItDown
-    # legal_dir = LANDING_DIR / "legal"
-    # output_dir = OUTPUT_DIR / "legal"
-    # output_dir.mkdir(parents=True, exist_ok=True)
-    # converter = MarkItDown()
-    # for path in legal_dir.iterdir():
-    #     if path.suffix.lower() in {".pdf", ".doc", ".docx"}:
-    #         result = converter.convert(str(path))
-    #         (output_dir / f"{path.stem}.md").write_text(
-    #             result.text_content, encoding="utf-8"
-    #         )
-    raise NotImplementedError("Implement convert_legal_docs")
+    """Convert PDF/DOCX sang standardized/legal."""
+    from markitdown import MarkItDown
+    import pypdf
+
+    legal_dir = LANDING_DIR / "legal"
+    output_dir = OUTPUT_DIR / "legal"
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    converter = MarkItDown()
+    for path in sorted(legal_dir.iterdir()):
+        if path.is_file() and path.suffix.lower() in {".pdf", ".doc", ".docx"}:
+            stem = path.stem
+            if stem.lower().endswith(".pdf"):
+                stem = Path(stem).stem
+            dest = output_dir / f"{stem}.md"
+
+            content = ""
+            try:
+                result = converter.convert(str(path))
+                content = result.text_content.strip()
+            except Exception as e:
+                print(f"MarkItDown failed for {path.name} ({e}), falling back to pypdf...")
+                if path.suffix.lower() == ".pdf":
+                    reader = pypdf.PdfReader(str(path))
+                    content = "\n\n".join(
+                        page.extract_text() or "" for page in reader.pages
+                    ).strip()
+
+            if content:
+                dest.write_text(content, encoding="utf-8")
+                print(f"Converted legal: {path.name} -> {dest.name} ({len(content)} chars)")
+            else:
+                print(f"Warning: Empty content for {path.name}")
 
 
 def convert_news_articles() -> None:
-    # TODO: Convert JSON vào standardized/news.
-    #
-    # import json
-    # news_dir = LANDING_DIR / "news"
-    # output_dir = OUTPUT_DIR / "news"
-    # output_dir.mkdir(parents=True, exist_ok=True)
-    # for path in news_dir.glob("*.json"):
-    #     data = json.loads(path.read_text(encoding="utf-8"))
-    #     header = (
-    #         f"# {data['title']}\n\n"
-    #         f"**Source:** {data['url']}\n\n"
-    #         f"**Crawled:** {data['date_crawled']}\n\n---\n\n"
-    #     )
-    #     (output_dir / f"{path.stem}.md").write_text(
-    #         header + data["content_markdown"], encoding="utf-8"
-    #     )
-    raise NotImplementedError("Implement convert_news_articles")
+    """Convert JSON sang standardized/news."""
+    import json
+
+    news_dir = LANDING_DIR / "news"
+    output_dir = OUTPUT_DIR / "news"
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    for path in sorted(news_dir.glob("*.json")):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        header = (
+            f"# {data['title']}\n\n"
+            f"**Source:** {data['url']}\n\n"
+            f"**Crawled:** {data['date_crawled']}\n\n"
+            f"---\n\n"
+        )
+        content = header + data["content_markdown"].strip()
+        dest = output_dir / f"{path.stem}.md"
+        dest.write_text(content, encoding="utf-8")
+        print(f"Converted news: {path.name} -> {dest.name} ({len(content)} chars)")
 
 
 def convert_all() -> None:

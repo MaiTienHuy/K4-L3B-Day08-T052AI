@@ -1,0 +1,77 @@
+[
+  {
+    "question": "Thí sinh đăng ký nguyện vọng xét tuyển đại học 2026 từ ngày nào đến ngày nào?",
+    "expected_answer": "Thí sinh đăng ký, điều chỉnh nguyện vọng xét tuyển từ ngày 02/7 đến 17h00 ngày 14/7/2026.",
+    "expected_context": "Từ 2/7 đến 17 giờ ngày 14/7/2026: Thí sinh đăng ký, điều chỉnh nguyện vọng xét tuyển."
+  },
+  {
+    "question": "Hạn cuối nộp lệ phí xét tuyển đại học 2026 là ngày nào?",
+    "expected_answer": "Thí sinh nộp lệ phí xét tuyển trực tuyến từ ngày 15/7 đến 17h00 ngày 21/7/2026.",
+    "expected_context": "Từ ngày 15/7 đến 17h00 ngày 21/7/2026, thí sinh nộp lệ phí xét tuyển trực tuyến."
+  },
+  {
+    "question": "Thí sinh xác nhận nhập học trực tuyến đợt 1 trước ngày nào?",
+    "expected_answer": "Thí sinh phải xác nhận nhập học trực tuyến trước 17h00 ngày 21/8/2026.",
+    "expected_context": "17 giờ ngày 21/8/2026: Thí sinh hoàn thành việc xác nhận nhập học trực tuyến đợt 1."
+  },
+  {
+    "question": "Mỗi thí sinh được đăng ký tối đa bao nhiêu nguyện vọng xét tuyển?",
+    "expected_answer": "Thí sinh được đăng ký tối đa 15 nguyện vọng xét tuyển và sắp xếp theo thứ tự ưu tiên từ cao xuống thấp.",
+    "expected_context": "Thí sinh được đăng ký tối đa 15 nguyện vọng và sắp xếp theo thứ tự ưu tiên từ cao xuống thấp."
+  },
+  {
+    "question": "Thí sinh tự do chưa có tài khoản cần đăng ký thông tin cá nhân trước ngày nào để được cấp tài khoản xét tuyển?",
+    "expected_answer": "Thí sinh tự do phải đăng ký thông tin cá nhân từ ngày 01/5 đến ngày 20/5/2026 để được cấp tài khoản.",
+    "expected_context": "Thí sinh đã tốt nghiệp THPT, trung cấp (thí sinh tự do) chưa thực hiện đăng ký thông tin cá nhân phải thực hiện từ ngày 01/5 đến ngày 20/5/2026."
+  },
+  {
+    "question": "Điểm ưu tiên khu vực 1 (KV1) trong tuyển sinh đại học 2026 là bao nhiêu?",
+    "expected_answer": "Điểm ưu tiên áp dụng cho khu vực 1 (KV1) là 0,75 điểm.",
+    "expected_context": "Mức điểm ưu tiên áp dụng cho khu vực 1 (KV1) là 0,75 điểm, khu vực 2 nông thôn (KV2-NT) là 0,50 điểm, khu vực 2 (KV2) là 0,25 điểm; khu vực 3 (KV3) không được tính điểm ưu tiên."
+  },
+  {
+    "question": "Nhóm đối tượng ưu tiên UT1 được cộng bao nhiêu điểm trong tuyển sinh đại học 2026?",
+    "expected_answer": "Nhóm đối tượng ưu tiên 1 (UT1) được cộng 2,00 điểm.",
+    "expected_context": "Mức điểm ưu tiên áp dụng cho nhóm đối tượng UT1 (gồm các đối tượng 1 đến 3) là 2,00 điểm và cho nhóm đối tượng ưu tiên 2 (gồm các đối tượng 4 đến 6) là 1,00 điểm."
+  },
+  {
+    "question": "Điều kiện điểm thi tốt nghiệp THPT tối thiểu để đăng ký xét tuyển đại học 2026 là bao nhiêu?",
+    "expected_answer": "Thí sinh tốt nghiệp THPT năm 2026 phải có tổng điểm 3 môn thi tốt nghiệp đạt tối thiểu 15,00 điểm theo thang điểm 30 (không tính điểm ưu tiên).",
+    "expected_context": "Nguồn xét tuyển vào CTĐT trình độ đại học là thí sinh có tổng điểm 03 môn thi kỳ thi tốt nghiệp THPT đạt tối thiểu 15,00 điểm theo thang điểm 30 (không tính điểm ưu tiên)."
+  },
+  {
+    "question": "Ngành đào tạo giáo viên chỉ xét tuyển thí sinh có nguyện vọng từ thứ mấy trở xuống?",
+    "expected_answer": "Các cơ sở đào tạo ngành giáo viên chỉ xét tuyển thí sinh đăng ký ở các nguyện vọng từ 01 đến 05.",
+    "expected_context": "Đối với các thí sinh đăng ký xét tuyển vào các ngành đào tạo giáo viên, các cơ sở đào tạo chỉ xét tuyển các nguyện vọng từ 01 đến 05."
+  },
+  {
+    "question": "Thí sinh rà soát kết quả điểm học bạ THPT trên hệ thống phải hoàn thành trước ngày nào?",
+    "expected_answer": "Thí sinh phải hoàn thành rà soát kết quả điểm học tập (học bạ) THPT trước 17h00 ngày 06/6/2026.",
+    "expected_context": "17 giờ ngày 6/6/2026: Hoàn thành rà soát kết quả điểm học tập cấp THPT (học bạ) trên hệ thống."
+  },
+  {
+    "question": "Thí sinh thanh toán lệ phí xét tuyển đại học 2026 thực hiện qua kênh nào?",
+    "expected_answer": "Thí sinh chỉ thực hiện nộp lệ phí trên Hệ thống hỗ trợ đăng ký xét tuyển (Hệ thống XT) tại địa chỉ https://thisinh.thitotnghiepthpt.edu.vn, không thực hiện trên bất kỳ kênh thanh toán nào khác.",
+    "expected_context": "Thí sinh chỉ thực hiện việc nộp lệ phí trên Hệ thống XT, không thực hiện trên bất kỳ kênh thanh toán nào khác."
+  },
+  {
+    "question": "Khi hệ thống thanh toán lệ phí xét tuyển bị tắc nghẽn, thí sinh cần làm gì?",
+    "expected_answer": "Khi gặp tắc nghẽn hệ thống, thí sinh không nên cố gắng truy cập lại ngay mà chờ khoảng 30 phút sau rồi thực hiện lại.",
+    "expected_context": "Trong trường hợp đó, thí sinh không nên cố gắng truy cập lại ngay, chờ khoảng 30 phút sau thực hiện lại."
+  },
+  {
+    "question": "Bộ GDĐT yêu cầu mỗi cơ sở đào tạo sử dụng tối đa bao nhiêu phương thức tuyển sinh?",
+    "expected_answer": "Bộ GDĐT đề xuất cơ sở đào tạo sử dụng tối đa 5 phương thức tuyển sinh (không bao gồm phương thức xét tuyển thẳng).",
+    "expected_context": "Bộ GD&ĐT đề xuất cơ sở đào tạo sử dụng tối đa 5 phương thức tuyển sinh không bao gồm phương thức xét tuyển thẳng."
+  },
+  {
+    "question": "Khu vực 3 (KV3) trong tuyển sinh đại học 2026 gồm những địa bàn nào?",
+    "expected_answer": "Khu vực 3 (KV3) gồm các phường của thành phố trực thuộc Trung ương và không được tính điểm ưu tiên.",
+    "expected_context": "Khu vực 3 (KV3): Các phường của thành phố trực thuộc Trung ương. KV3 không được tính điểm ưu tiên."
+  },
+  {
+    "question": "Phương thức xét tuyển bằng học bạ THPT năm 2026 yêu cầu điểm trung bình của bao nhiêu học kỳ?",
+    "expected_answer": "Phương thức xét tuyển bằng kết quả học tập THPT (học bạ) sử dụng điểm trung bình chung của 6 học kỳ (lớp 10, lớp 11 và lớp 12) của tối thiểu 3 môn học, trong đó bắt buộc phải có môn Toán hoặc Ngữ văn.",
+    "expected_context": "Tổ hợp xét tuyển sử dụng điểm trung bình chung kết quả học tập của 6 học kì (lớp 10, lớp 11 và lớp 12) của tối thiểu 3 môn học, trong đó bắt buộc phải có môn Toán hoặc Ngữ văn."
+  }
+]

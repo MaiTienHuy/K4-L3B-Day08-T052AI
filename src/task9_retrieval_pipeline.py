@@ -28,27 +28,34 @@ def retrieve(
     use_reranking: bool = True,
 ) -> list[dict]:
     """Trả về hybrid hoặc pageindex SearchResult."""
-    # TODO: Implement full retrieval pipeline.
-    #
-    # dense = semantic_search(query, top_k=top_k * 2)
-    # sparse = lexical_search(query, top_k=top_k * 2)
-    # hybrid = (
-    #     rerank_rrf([dense, sparse], top_k=top_k)
-    #     if use_reranking else dense[:top_k]
-    # )
-    #
-    # best_dense_score = dense[0]["score"] if dense else 0.0
-    # if best_dense_score < score_threshold:
-    #     try:
-    #         fallback = pageindex_search(query, top_k=top_k)
-    #         if fallback:
-    #             return fallback
-    #     except Exception:
-    #         pass
-    # return hybrid[:top_k]
-    raise NotImplementedError("Implement retrieve")
+    if top_k <= 0 or not query.strip():
+        return []
+
+    dense = semantic_search(query, top_k=top_k * 2)
+    sparse = lexical_search(query, top_k=top_k * 2)
+
+    best_dense_score = dense[0]["score"] if dense else 0.0
+
+    if best_dense_score < score_threshold:
+        try:
+            fallback = pageindex_search(query, top_k=top_k)
+            if fallback:
+                return fallback[:top_k]
+        except Exception:
+            pass
+
+    if use_reranking:
+        hybrid = rerank_rrf([dense, sparse], top_k=top_k)
+    else:
+        hybrid = dense[:top_k]
+
+    return hybrid[:top_k]
 
 
 if __name__ == "__main__":
-    for result in retrieve("test query", top_k=3):
-        print(result)
+    import sys
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+    for res in retrieve("thời gian đăng ký xét tuyển đại học 2026", top_k=3):
+        print(f"[{res['retrieval_method']}:{res['score']:.4f}] {res['metadata']['title']}: {res['content'][:80]}...")
+
