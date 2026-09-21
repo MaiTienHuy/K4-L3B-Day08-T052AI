@@ -13,6 +13,8 @@
 | **Thành viên 1** (Mai Tiến Huy) | Lead & Data Engineer | Task 1, Task 2, Task 3 — Thu thập & chuẩn hóa corpus |
 | **Thành viên 2** | Retrieval Engineer | Task 4, Task 5, Task 6 — Chunking, Dense search, BM25 |
 | **Thành viên 3** (Hoàng Ngọc Đức) | Pipeline Engineer | Task 7, Task 8, Task 9 — RRF, Fallback, Retrieval pipeline |
+| **Thành viên 2** (Lê Việt Hoàng) | Retrieval Engineer | Task 4, Task 5, Task 6 — Chunking, Dense search, BM25 |
+| **Thành viên 3** | Pipeline Engineer | Task 7, Task 8, Task 9 — RRF, Fallback, Retrieval pipeline |
 | **Thành viên 4** | Generation & Evaluation | Task 10, app.py, Golden dataset, RESULT.md |
 
 ---
@@ -25,11 +27,11 @@
 - **Output:** 4 PDF tuyển sinh, 5 JSON bài viết, toàn bộ `data/landing/` và `data/standardized/`
 - **Deliverables:** `reports/2A202602914-mai-tien-huy.md`
 
-### Thành viên 2
+### Thành viên 2 — Lê Việt Hoàng
 - **Trách nhiệm chính:** Xây dựng vector store và hai đường tìm kiếm
 - **Module:** `src/task4_chunking_indexing.py`, `src/task5_semantic_search.py`, `src/task6_lexical_search.py`
 - **Output:** ChromaDB với embeddings BAAI/bge-m3, BM25 index
-- **Deliverables:** `reports/<id>-<name>.md`
+- **Deliverables:** `reports/K4-L3B-2A202602596-LeVietHoang.md`
 
 ### Thành viên 3 - Hoàng Ngọc Đức
 - **Trách nhiệm chính:** Hợp nhất kết quả và xây dựng retrieval pipeline
