@@ -13,7 +13,7 @@
 | **Thành viên 1** (Mai Tiến Huy) | Lead & Data Engineer | Task 1, Task 2, Task 3 — Thu thập & chuẩn hóa corpus |
 | **Thành viên 2** (Lê Việt Hoàng) | Retrieval Engineer | Task 4, Task 5, Task 6 — Chunking, Dense search, BM25 |
 | **Thành viên 3** (Hoàng Ngọc Đức) | Pipeline Engineer | Task 7, Task 8, Task 9 — RRF, Fallback, Retrieval pipeline |
-| **Thành viên 4** | Trịnh Xuân Huy| Task 10, app.py, Golden dataset, RESULT.md |
+| **Thành viên 4** (Trịnh Xuân Huy) | Generation & Evaluation| Task 10, app.py, Golden dataset, RESULT.md |
 
 ---
 
