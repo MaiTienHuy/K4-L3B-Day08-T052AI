@@ -2,8 +2,8 @@
 
 ## Thông tin
 
-- **Họ và tên:** [Điền họ tên thành viên 4]
-- **Mã học viên:** [Điền MSSV]
+- **Họ và tên:** Trịnh Xuân Huy
+- **Mã học viên:** 2A202602995
 - **Nhóm:** K4-Day08, nhóm 4 thành viên
 - **Repository:** K4-Day08-MaiTienHuy-2A202602914 / branch: main
 
