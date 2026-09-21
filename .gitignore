@@ -45,6 +45,9 @@ data/_tmp_pdf/
 pageindex_doc_ids.json
 pageindex_pdfs/
 
+# ChromaDB vector store (rebuild with: python -m src.task4_chunking_indexing)
+chroma_db/
+
 # Jupyter
 .ipynb_checkpoints/
 
@@ -55,3 +58,6 @@ pageindex_pdfs/
 # OS
 .DS_Store
 Thumbs.db
+
+# ECC / Antigravity agent config (local tooling, not project code)
+.agents/

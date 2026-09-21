@@ -24,20 +24,35 @@ def setup_directory() -> None:
 
 
 def download_documents() -> None:
-    """Tải ít nhất 3 PDF/DOCX từ nguồn công khai."""
-    # TODO: Có thể tải thủ công hoặc dùng requests.
-    #
-    # Ví dụ:
-    # import requests
-    #
-    # sources = {
-    #     "policy-a.pdf": "https://example.edu/policy-a.pdf",
-    # }
-    # for filename, url in sources.items():
-    #     response = requests.get(url, timeout=30)
-    #     response.raise_for_status()
-    #     (DATA_DIR / filename).write_bytes(response.content)
-    raise NotImplementedError("Implement download_documents")
+    """Tải và kiểm tra ít nhất 3 PDF/DOCX từ nguồn công khai."""
+    sources = {
+        "01_quy_che_tuyen_sinh_2026.pdf": "https://moet.gov.vn/van-ban/van-ban-quan-ly-nha-nuoc/Pages/chi-tiet-van-ban.aspx?ItemID=8456",
+        "02_ke_hoach_tuyen_sinh_2026.pdf": "https://moet.gov.vn/van-ban/van-ban-quan-ly-nha-nuoc/Pages/chi-tiet-van-ban.aspx?ItemID=8457",
+        "03_huong_dan_tuyen_sinh_2026.pdf": "https://moet.gov.vn/van-ban/van-ban-quan-ly-nha-nuoc/Pages/chi-tiet-van-ban.aspx?ItemID=8458",
+        "04_so_luong_tuyen_sinh_2026.pdf": "https://moet.gov.vn/van-ban/van-ban-quan-ly-nha-nuoc/Pages/chi-tiet-van-ban.aspx?ItemID=8459",
+    }
+    
+    # Kiểm tra các file đã có trong thư mục
+    existing_files = [p for p in DATA_DIR.iterdir() if p.suffix.lower() in {".pdf", ".doc", ".docx"} and p.stat().st_size > 1024]
+    if len(existing_files) >= 3:
+        print(f"Found {len(existing_files)} valid legal documents in {DATA_DIR}:")
+        for f in existing_files:
+            print(f"  - {f.name} ({f.stat().st_size} bytes)")
+        return
+
+    # Nếu chưa có đủ file, tải từ sources
+    import requests
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+    for filename, url in sources.items():
+        dest = DATA_DIR / filename
+        if not dest.exists() or dest.stat().st_size <= 1024:
+            try:
+                response = requests.get(url, headers=headers, timeout=30)
+                if response.status_code == 200 and len(response.content) > 1024:
+                    dest.write_bytes(response.content)
+                    print(f"Downloaded: {filename} ({len(response.content)} bytes)")
+            except Exception as e:
+                print(f"Failed to download {filename} from {url}: {e}")
 
 
 if __name__ == "__main__":
