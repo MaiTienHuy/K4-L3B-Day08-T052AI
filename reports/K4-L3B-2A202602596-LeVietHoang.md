@@ -2,8 +2,8 @@
 
 ## Thông tin
 
-- **Họ và tên:** [Điền họ tên thành viên 2]
-- **Mã học viên:** [Điền MSSV]
+- **Họ và tên:** Lê Việt Hoàng
+- **Mã học viên:** 2A202602596
 - **Nhóm:** K4-Day08, nhóm 4 thành viên
 - **Repository:** K4-Day08-MaiTienHuy-2A202602914 / branch: main
 
@@ -52,4 +52,4 @@
 Tôi xác nhận nội dung trên phản ánh đúng phần việc của mình và có thể giải thích hoặc chạy lại trong buổi demo.
 
 - **Ngày:** 2026-09-21
-- **Tên thành viên:** [Điền tên]
+- **Tên thành viên:** Lê Việt Hoàng
